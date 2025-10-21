@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
     final args = settings.arguments;
+
     switch (settings.name) {
       // case Routes.splash:
       //   return MaterialPageRoute(builder: (_) => const SplashScreen());
