@@ -7,8 +7,7 @@ class AppRouter {
     final args = settings.arguments;
 
     switch (settings.name) {
-      // case Routes.splash:
-      //   return MaterialPageRoute(builder: (_) => const SplashScreen());
+      
       case Routes.onBoarding:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
       // case Routes.home:
