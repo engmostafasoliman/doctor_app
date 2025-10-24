@@ -10,6 +10,7 @@ class AppTextFormField extends StatelessWidget {
   final TextEditingController controller;
   final EdgeInsetsGeometry? contentPadding;
   final Color? fillColor;
+  final String? Function(String?)? validation;
 
   const AppTextFormField({
     Key? key,
@@ -20,12 +21,14 @@ class AppTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.contentPadding,
     this.fillColor,
+    this.validation,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      validator: validation,
       decoration: InputDecoration(
         isDense: true,
 
