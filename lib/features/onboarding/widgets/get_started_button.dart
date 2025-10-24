@@ -21,8 +21,7 @@ class GetStartedButton extends StatelessWidget {
       ),
 
       onPressed: () {
-        // Handle button press
-        context.pushNamed(Routes.login); // Example navigation
+        context.pushNamed(Routes.login);
       },
       child: Text("Get Started", style: TextStyles.font16WhiteSemiBold),
     );
