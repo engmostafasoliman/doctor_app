@@ -1,5 +1,6 @@
 import 'package:doctor/core/DI/dependency_injection.dart';
 import 'package:doctor/core/routing/routes.dart';
+import 'package:doctor/features/home/ui/home_screen.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor/features/login/ui/login_screen.dart';
 import 'package:doctor/features/onboarding/onboarding_screen.dart';
@@ -19,8 +20,8 @@ class AppRouter {
             return OnBoardingScreen();
           },
         );
-      // case Routes.home:
-      //   return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case Routes.home:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
       case Routes.login:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

@@ -1,13 +1,20 @@
+import 'dart:math';
+
+import 'package:adaptive_dialog/adaptive_dialog.dart';
+import 'package:doctor/core/helpers/extentions.dart';
 import 'package:doctor/core/helpers/spacing.dart';
 import 'package:doctor/core/widgets/app_text_button.dart';
+import 'package:doctor/features/login/data/models/login_request_body.dart';
 import 'package:doctor/features/login/ui/widget/already_have_account_text.dart';
 import 'package:doctor/features/login/ui/widget/email_and_password.dart';
+import 'package:doctor/features/login/ui/widget/login_cubit_listener.dart';
 import 'package:doctor/features/login/ui/widget/terms_and_conditions_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/theming/style.dart';
-import '../../../core/widgets/app_text_form_field.dart';
+import '../logic/cubit/login_cubit.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -17,7 +24,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,32 +48,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 verticalSpace(36),
-                Form(
-                  key: formKey,
-                  child: Column(
-                    children: [
-                      EmailAndPassword(),
-                      verticalSpace(24),
-                      Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: Text(
-                          'Forgot Password?',
+                Column(
+                  children: [
+                    EmailAndPassword(),
+                    verticalSpace(24),
+                    Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: Text(
+                        'Forgot Password?',
 
-                          style: TextStyles.font13BlueRegular,
-                        ),
+                        style: TextStyles.font13BlueRegular,
                       ),
-                      verticalSpace(40),
-                      AppTextButton(
-                        text: "Login",
-                        textStyle: TextStyles.font16WhiteSemiBold,
-                        onPressed: () {},
-                      ),
-                      verticalSpace(24),
-                      TermsAndConditionsText(),
-                      verticalSpace(60),
-                      AlreadyHaveAccountText(),
-                    ],
-                  ),
+                    ),
+                    verticalSpace(40),
+                    LoginCubitListener(),
+                    verticalSpace(24),
+                    TermsAndConditionsText(),
+                    verticalSpace(60),
+                    AlreadyHaveAccountText(),
+                  ],
                 ),
               ],
             ),
@@ -76,4 +75,15 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+}
+
+Future<void> showErrorDialog(BuildContext context) async {
+  context.pop();
+  await showOkAlertDialog(
+    context: context,
+    title: 'Password Error',
+    message:
+        'Your password must be at least 8 characters long and include a number and special character.',
+    okLabel: 'OK',
+  );
 }
