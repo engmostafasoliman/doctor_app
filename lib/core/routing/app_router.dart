@@ -8,6 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
+import '../../features/signup/logic/sign_up_cubit.dart';
+import '../../features/signup/ui/sign_up_screen.dart';
+
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -27,6 +30,13 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => getIt<LoginCubit>(),
             child: const LoginScreen(),
+          ),
+        );
+      case Routes.signup:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<SignUpCubit>(),
+            child: const SignUpScreen(),
           ),
         );
       default:
