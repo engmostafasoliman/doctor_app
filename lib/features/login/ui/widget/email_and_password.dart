@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
-class EmailAndPassword extends StatefulWidget {
-  const EmailAndPassword({super.key});
+class EmailAndPasswordField extends StatefulWidget {
+  const EmailAndPasswordField({super.key});
 
   @override
-  State<EmailAndPassword> createState() => _EmailAndPasswordState();
+  State<EmailAndPasswordField> createState() => _EmailAndPasswordFieldState();
 }
 
-class _EmailAndPasswordState extends State<EmailAndPassword> {
+class _EmailAndPasswordFieldState extends State<EmailAndPasswordField> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
 
