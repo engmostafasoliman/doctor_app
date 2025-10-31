@@ -13,7 +13,7 @@ class AppTextFormField extends StatelessWidget {
   final String? Function(String?)? validation;
 
   const AppTextFormField({
-    Key? key,
+    super.key,
 
     this.hint,
     this.obscureText = false,
@@ -22,7 +22,7 @@ class AppTextFormField extends StatelessWidget {
     this.contentPadding,
     this.fillColor,
     this.validation,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

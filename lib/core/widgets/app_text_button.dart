@@ -14,7 +14,7 @@ class AppTextButton extends StatelessWidget {
   final double? buttonHeight;
 
   const AppTextButton({
-    Key? key,
+    super.key,
     this.textStyle,
     required this.text,
     required this.onPressed,
@@ -24,7 +24,7 @@ class AppTextButton extends StatelessWidget {
     this.borderRadius,
     this.buttonWidth,
     this.buttonHeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
