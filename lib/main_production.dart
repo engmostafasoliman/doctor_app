@@ -11,5 +11,6 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   setupDependencyInjection();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(DocApp(appRouter: AppRouter()));
 }
