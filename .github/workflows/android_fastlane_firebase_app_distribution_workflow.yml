@@ -27,13 +27,20 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: "3.4.7"    
+        ruby-version: "3.3.0"    
         bundler-cache: true
         working-directory: android
 
     - name: Add Linux platform to Bundler (حل لمشكلة x86_64-linux)
       run: bundle lock --add-platform x86_64-linux
       working-directory: android
+      
+    - name: تثبيت التبعيات
+      run: |
+        bundle add abbrev --version '~> 0.1.1'
+        bundle update fastlane
+
+
 
     - name: Build and Distribute App
       env:
