@@ -30,11 +30,7 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-<<<<<<< HEAD
-        ruby-version: 3.4.7
-=======
         ruby-version: "3.3.0"    
->>>>>>> 185b6c0f5b4527da0508c37d30800d0582e25aa2
         bundler-cache: true
         working-directory: android
 
