@@ -2,16 +2,15 @@ import 'package:doctor/core/widgets/app_text_form_field.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 
-class EmailAndPasswordField extends StatefulWidget {
-  const EmailAndPasswordField({super.key});
+class EmailAndPassword extends StatefulWidget {
+  const EmailAndPassword({Key? key}) : super(key: key);
 
   @override
-  State<EmailAndPasswordField> createState() => _EmailAndPasswordFieldState();
+  State<EmailAndPassword> createState() => _EmailAndPasswordState();
 }
 
-class _EmailAndPasswordFieldState extends State<EmailAndPasswordField> {
+class _EmailAndPasswordState extends State<EmailAndPassword> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
 
@@ -32,39 +31,27 @@ class _EmailAndPasswordFieldState extends State<EmailAndPasswordField> {
           AppTextFormField(
             hint: 'Email',
             controller: emailController,
-            validation: MultiValidator([
-              RequiredValidator(errorText: 'Email is required'),
-              EmailValidator(errorText: 'Enter a valid email address'),
-            ]).call,
+            validation: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your email';
+              }
+              return null;
+            },
           ),
           SizedBox(height: 16),
           AppTextFormField(
             hint: 'Password',
             controller: passwordController,
             obscureText: true,
-            validation: MultiValidator([
-              RequiredValidator(errorText: 'Password is required'),
-              MinLengthValidator(
-                8,
-                errorText: 'Password must be at least 8 characters long',
-              ),
-              PatternValidator(
-                r'(?=.*?[A-Z])',
-                errorText: 'Must have at least one uppercase letter',
-              ),
-              PatternValidator(
-                r'(?=.*?[a-z])',
-                errorText: 'Must have at least one lowercase letter',
-              ),
-              PatternValidator(
-                r'(?=.*?[0-9])',
-                errorText: 'Must have at least one number',
-              ),
-              PatternValidator(
-                r'(?=.*?[!@#\$&*~])',
-                errorText: 'Must have at least one special character',
-              ),
-            ]).call,
+            validation: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your password';
+              }
+              if (value.length < 6) {
+                return 'Password must be at least 6 characters long';
+              }
+              return null;
+            },
           ),
         ],
       ),

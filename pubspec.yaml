@@ -1,9 +1,24 @@
 name: doctor
 description: "A new Flutter project."
 
+<<<<<<< HEAD
 publish_to: 'none' 
 
 version: 1.0.3+1
+=======
+# The following defines the version and build number for your application.
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+>>>>>>> ca04bc51fa2f279b9d0582a5e373bb5650d90714
 
 environment:
   sdk: ^3.10.0-14.0.dev
@@ -43,9 +58,6 @@ dependencies:
   flutter_svg: ^2.2.1
   #Screen size and font size adaptation
   flutter_screenutil: ^5.9.3
-  form_field_validator: ^1.1.0
-  adaptive_dialog: ^2.4.2
-  firebase_core: ^4.2.1
 
 dev_dependencies:
   flutter_test:
