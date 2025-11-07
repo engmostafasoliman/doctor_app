@@ -1,4 +1,4 @@
-name: Android Fastlane with Firebase App Distribution Workflow
+name: Android Fastlane with Firebase App Distribution
 
 on:
   push:
@@ -7,10 +7,10 @@ on:
 
 jobs:
   distribute_to_firebase:
-    runs-on: ubuntu-latest   # استخدم Ubuntu بدل Windows
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout my repo code
+    - name: Checkout repo
       uses: actions/checkout@v2
 
     - name: Set up JDK 17
@@ -24,15 +24,20 @@ jobs:
       with:
         channel: stable
 
+    - name: Install system dependencies
+      run: sudo apt-get update && sudo apt-get install -y libffi-dev
+
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: "3.4.7"    
+        ruby-version: 3.4.7
         bundler-cache: true
         working-directory: android
 
-    - name: Add Linux platform to Bundler (حل لمشكلة x86_64-linux)
-      run: bundle lock --add-platform x86_64-linux
+    - name: Add missing gems
+      run: |
+        echo 'gem "abbrev"' >> android/Gemfile
+        bundle install
       working-directory: android
 
     - name: Build and Distribute App
