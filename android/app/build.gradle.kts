@@ -42,7 +42,7 @@ android {
         }
         create("production") {
             dimension = "default"
-            applicationIdSuffix = ".production"
+            applicationIdSuffix = ""
             resValue("string", "app_name", "Al Doc Production")
             
         }

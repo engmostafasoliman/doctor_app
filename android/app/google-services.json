@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:241952697155:android:0bbf406b74738c910f9df6",
         "android_client_info": {
-          "package_name": "com.example.doctor.development"
+          "package_name": "com.example.doctor"
         }
       },
       "oauth_client": [],
