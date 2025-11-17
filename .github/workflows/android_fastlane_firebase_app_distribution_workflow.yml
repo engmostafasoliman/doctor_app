@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest   
 
     steps:
-    - name: Checkout my repo code
+    - name: Checkout my repo code.
       uses: actions/checkout@v2
 
     - name: Set up JDK 17
