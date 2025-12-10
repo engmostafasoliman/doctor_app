@@ -34,10 +34,30 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorManager.darkBlueColor,
   );
+  static TextStyle font18DarkBlueBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorManager.darkBlueColor,
+  );
   static TextStyle font14GreyRegular = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorManager.gray,
+  );
+  static TextStyle font12GreyRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorManager.gray,
+  );
+  static TextStyle font12MainBlueRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorManager.primaryColor,
+  );
+  static TextStyle font18WhiteMedium = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorManager.backgroundColor,
   );
   static TextStyle font14DarkBlueMedium = TextStyle(
     fontSize: 14.sp,
