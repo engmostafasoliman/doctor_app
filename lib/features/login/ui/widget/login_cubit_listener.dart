@@ -1,7 +1,6 @@
 import 'package:doctor/core/helpers/extentions.dart';
 import 'package:doctor/core/theming/style.dart';
 import 'package:doctor/core/widgets/app_text_button.dart';
-import 'package:doctor/features/login/data/models/login_request_body.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor/features/login/ui/login_screen.dart';
 import 'package:flutter/material.dart';
