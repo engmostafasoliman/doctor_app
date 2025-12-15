@@ -1,11 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:doctor/core/networking/api_service.dart';
 import 'package:doctor/core/networking/dio_factory.dart';
+import 'package:doctor/features/home/data/apis/home_api_services.dart';
+import 'package:doctor/features/home/data/repos/home_repo.dart';
+import 'package:doctor/features/home/logic/cubit/home_cubit.dart';
 import 'package:doctor/features/login/data/repo/login_repo.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor/features/signup/data/repos/sign_up_repo.dart';
 import 'package:doctor/features/signup/logic/sign_up_cubit.dart';
 import 'package:get_it/get_it.dart';
+import 'package:retrofit/http.dart';
 
 final getIt = GetIt.instance;
 void setupDependencyInjection() async {
@@ -22,4 +26,9 @@ void setupDependencyInjection() async {
     () => SignUpRepo(apiService: getIt<ApiService>()),
   );
   getIt.registerFactory(() => SignUpCubit(signUpRepo: getIt<SignUpRepo>()));
+  //home
+  getIt.registerLazySingleton<HomeApiServices>(() => HomeApiServices(dio));
+  getIt.registerLazySingleton<HomeRepo>(
+    () => HomeRepo(getIt<HomeApiServices>()),
+  );
 }
