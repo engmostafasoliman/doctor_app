@@ -43,9 +43,15 @@ dependencies:
   flutter_svg: ^2.2.1
   #Screen size and font size adaptation
   flutter_screenutil: ^5.9.3
+  # Form Field Validator
   form_field_validator: ^1.1.0
   adaptive_dialog: ^2.4.2
+  # Firebase Core
   firebase_core: ^4.2.1
+  # Firebase Core
+  shared_preferences: ^2.5.3
+  # Flutter Secure Storage
+  flutter_secure_storage: ^10.0.0
 
 dev_dependencies:
   flutter_test:

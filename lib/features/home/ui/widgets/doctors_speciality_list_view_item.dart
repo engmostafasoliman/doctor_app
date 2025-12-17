@@ -1,6 +1,5 @@
 import 'package:doctor/core/theming/colors.dart';
 import 'package:doctor/features/home/data/models/specialization_response_model.dart';
-import 'package:doctor/features/home/ui/widgets/doctors_speciality_list_view_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

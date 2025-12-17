@@ -1,9 +1,5 @@
-import 'package:doctor/core/helpers/spacing.dart';
-import 'package:doctor/core/theming/colors.dart';
-import 'package:doctor/core/theming/style.dart';
 import 'package:doctor/features/home/ui/widgets/doctor_list_view_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../data/models/specialization_response_model.dart';
 

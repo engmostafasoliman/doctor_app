@@ -1,5 +1,4 @@
 import 'package:doctor/core/helpers/spacing.dart';
-import 'package:doctor/features/home/data/models/specialization_response_model.dart';
 import 'package:doctor/features/home/logic/cubit/home_cubit.dart';
 import 'package:doctor/features/home/logic/cubit/home_state.dart';
 import 'package:doctor/features/home/ui/widgets/doctors_blue_container_widget.dart';
