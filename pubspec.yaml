@@ -52,6 +52,8 @@ dependencies:
   shared_preferences: ^2.5.3
   # Flutter Secure Storage
   flutter_secure_storage: ^10.0.0
+  # Shimmer effect
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,4 @@
+import 'package:doctor/core/helpers/shared_pref_helper.dart';
 import 'package:doctor/core/helpers/spacing.dart';
 import 'package:doctor/core/theming/style.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,9 @@ class DoctorsBlueContainerWidget extends StatelessWidget {
 
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      SharedPrefHelper.clearAllSecuredData();
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
