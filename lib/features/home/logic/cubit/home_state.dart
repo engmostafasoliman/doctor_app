@@ -10,8 +10,14 @@ class HomeState with _$HomeState {
   //sprecialization data can be added here later
   const factory HomeState.specializationLoading() = SpecializationLoading;
   const factory HomeState.specializationLoaded(
-    SpecializationResponseModel specializationResponse,
+    List<SpecializationData?>? specializationResponse,
   ) = SpecializationLoaded;
   const factory HomeState.specializationError(ErrorHandler errorHandler) =
       SpecializationError;
+  //Doctors data can be added
+
+  const factory HomeState.doctorsLoaded(List<Doctors>? doctorsResponse) =
+      DoctorsLoaded;
+  const factory HomeState.doctorsError(ErrorHandler errorHandler) =
+      DoctorsError;
 }

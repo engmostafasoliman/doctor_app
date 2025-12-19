@@ -1,3 +1,4 @@
+import 'package:doctor/core/helpers/constants.dart';
 import 'package:doctor/core/routing/app_router.dart';
 import 'package:doctor/core/routing/routes.dart';
 import 'package:doctor/core/theming/colors.dart';
@@ -15,7 +16,7 @@ class DocApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.onBoarding,
+        initialRoute: isLoggedIn ? Routes.home : Routes.login,
         theme: ThemeData(
           primaryColor: ColorManager.primaryColor,
           scaffoldBackgroundColor: ColorManager.backgroundColor,
