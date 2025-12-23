@@ -1,7 +1,7 @@
-import 'package:doctor/features/home/ui/widgets/doctor_list_view_item.dart';
+import 'package:doctor/features/home/ui/widgets/doctors_list/doctor_list_view_item.dart';
 import 'package:flutter/material.dart';
 
-import '../../data/models/specialization_response_model.dart';
+import '../../../data/models/specialization_response_model.dart';
 
 class DoctorsListView extends StatelessWidget {
   const DoctorsListView({super.key, required this.doctorsList});
