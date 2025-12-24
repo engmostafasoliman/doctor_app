@@ -1,3 +1,3 @@
 🎨 System Design 
 
-<img width="1024" height="1457" alt="ChatGPT Image Dec 24, 2025, 11_19_17 AM" src="https://github.com/user-attachments/assets/e9a590a8-4296-4979-8eab-cf07bf4b64a2" />
+<img width="1024" height="1457" alt="ChatGPT Image Dec 24, 2025, 11_19_17 AM" src="https://github.com/user-attachments/assets/6224b731-c2fe-44bd-901c-b4bce5a8064a" />
