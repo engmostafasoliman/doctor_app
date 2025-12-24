@@ -134,15 +134,15 @@ return doctorsError(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  specializationLoading,TResult Function( List<SpecializationData?>? specializationResponse)?  specializationLoaded,TResult Function( ErrorHandler errorHandler)?  specializationError,TResult Function( List<Doctors>? doctorsResponse)?  doctorsLoaded,TResult Function( ErrorHandler errorHandler)?  doctorsError,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  specializationLoading,TResult Function( List<SpecializationData?>? specializationResponse)?  specializationLoaded,TResult Function( ApiErrorModel apiErrorModel)?  specializationError,TResult Function( List<Doctors>? doctorsResponse)?  doctorsLoaded,TResult Function( ApiErrorModel apiErrorModel)?  doctorsError,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case SpecializationLoading() when specializationLoading != null:
 return specializationLoading();case SpecializationLoaded() when specializationLoaded != null:
 return specializationLoaded(_that.specializationResponse);case SpecializationError() when specializationError != null:
-return specializationError(_that.errorHandler);case DoctorsLoaded() when doctorsLoaded != null:
+return specializationError(_that.apiErrorModel);case DoctorsLoaded() when doctorsLoaded != null:
 return doctorsLoaded(_that.doctorsResponse);case DoctorsError() when doctorsError != null:
-return doctorsError(_that.errorHandler);case _:
+return doctorsError(_that.apiErrorModel);case _:
   return orElse();
 
 }
@@ -160,15 +160,15 @@ return doctorsError(_that.errorHandler);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  specializationLoading,required TResult Function( List<SpecializationData?>? specializationResponse)  specializationLoaded,required TResult Function( ErrorHandler errorHandler)  specializationError,required TResult Function( List<Doctors>? doctorsResponse)  doctorsLoaded,required TResult Function( ErrorHandler errorHandler)  doctorsError,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  specializationLoading,required TResult Function( List<SpecializationData?>? specializationResponse)  specializationLoaded,required TResult Function( ApiErrorModel apiErrorModel)  specializationError,required TResult Function( List<Doctors>? doctorsResponse)  doctorsLoaded,required TResult Function( ApiErrorModel apiErrorModel)  doctorsError,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case SpecializationLoading():
 return specializationLoading();case SpecializationLoaded():
 return specializationLoaded(_that.specializationResponse);case SpecializationError():
-return specializationError(_that.errorHandler);case DoctorsLoaded():
+return specializationError(_that.apiErrorModel);case DoctorsLoaded():
 return doctorsLoaded(_that.doctorsResponse);case DoctorsError():
-return doctorsError(_that.errorHandler);case _:
+return doctorsError(_that.apiErrorModel);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -185,15 +185,15 @@ return doctorsError(_that.errorHandler);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  specializationLoading,TResult? Function( List<SpecializationData?>? specializationResponse)?  specializationLoaded,TResult? Function( ErrorHandler errorHandler)?  specializationError,TResult? Function( List<Doctors>? doctorsResponse)?  doctorsLoaded,TResult? Function( ErrorHandler errorHandler)?  doctorsError,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  specializationLoading,TResult? Function( List<SpecializationData?>? specializationResponse)?  specializationLoaded,TResult? Function( ApiErrorModel apiErrorModel)?  specializationError,TResult? Function( List<Doctors>? doctorsResponse)?  doctorsLoaded,TResult? Function( ApiErrorModel apiErrorModel)?  doctorsError,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case SpecializationLoading() when specializationLoading != null:
 return specializationLoading();case SpecializationLoaded() when specializationLoaded != null:
 return specializationLoaded(_that.specializationResponse);case SpecializationError() when specializationError != null:
-return specializationError(_that.errorHandler);case DoctorsLoaded() when doctorsLoaded != null:
+return specializationError(_that.apiErrorModel);case DoctorsLoaded() when doctorsLoaded != null:
 return doctorsLoaded(_that.doctorsResponse);case DoctorsError() when doctorsError != null:
-return doctorsError(_that.errorHandler);case _:
+return doctorsError(_that.apiErrorModel);case _:
   return null;
 
 }
@@ -343,10 +343,10 @@ as List<SpecializationData?>?,
 
 
 class SpecializationError implements HomeState {
-  const SpecializationError(this.errorHandler);
+  const SpecializationError(this.apiErrorModel);
   
 
- final  ErrorHandler errorHandler;
+ final  ApiErrorModel apiErrorModel;
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
@@ -358,16 +358,16 @@ $SpecializationErrorCopyWith<SpecializationError> get copyWith => _$Specializati
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SpecializationError&&(identical(other.errorHandler, errorHandler) || other.errorHandler == errorHandler));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SpecializationError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,errorHandler);
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
 
 @override
 String toString() {
-  return 'HomeState.specializationError(errorHandler: $errorHandler)';
+  return 'HomeState.specializationError(apiErrorModel: $apiErrorModel)';
 }
 
 
@@ -378,7 +378,7 @@ abstract mixin class $SpecializationErrorCopyWith<$Res> implements $HomeStateCop
   factory $SpecializationErrorCopyWith(SpecializationError value, $Res Function(SpecializationError) _then) = _$SpecializationErrorCopyWithImpl;
 @useResult
 $Res call({
- ErrorHandler errorHandler
+ ApiErrorModel apiErrorModel
 });
 
 
@@ -395,10 +395,10 @@ class _$SpecializationErrorCopyWithImpl<$Res>
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? errorHandler = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
   return _then(SpecializationError(
-null == errorHandler ? _self.errorHandler : errorHandler // ignore: cast_nullable_to_non_nullable
-as ErrorHandler,
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
   ));
 }
 
@@ -483,10 +483,10 @@ as List<Doctors>?,
 
 
 class DoctorsError implements HomeState {
-  const DoctorsError(this.errorHandler);
+  const DoctorsError(this.apiErrorModel);
   
 
- final  ErrorHandler errorHandler;
+ final  ApiErrorModel apiErrorModel;
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
@@ -498,16 +498,16 @@ $DoctorsErrorCopyWith<DoctorsError> get copyWith => _$DoctorsErrorCopyWithImpl<D
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DoctorsError&&(identical(other.errorHandler, errorHandler) || other.errorHandler == errorHandler));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DoctorsError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,errorHandler);
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
 
 @override
 String toString() {
-  return 'HomeState.doctorsError(errorHandler: $errorHandler)';
+  return 'HomeState.doctorsError(apiErrorModel: $apiErrorModel)';
 }
 
 
@@ -518,7 +518,7 @@ abstract mixin class $DoctorsErrorCopyWith<$Res> implements $HomeStateCopyWith<$
   factory $DoctorsErrorCopyWith(DoctorsError value, $Res Function(DoctorsError) _then) = _$DoctorsErrorCopyWithImpl;
 @useResult
 $Res call({
- ErrorHandler errorHandler
+ ApiErrorModel apiErrorModel
 });
 
 
@@ -535,10 +535,10 @@ class _$DoctorsErrorCopyWithImpl<$Res>
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? errorHandler = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
   return _then(DoctorsError(
-null == errorHandler ? _self.errorHandler : errorHandler // ignore: cast_nullable_to_non_nullable
-as ErrorHandler,
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
   ));
 }
 
