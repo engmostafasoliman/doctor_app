@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../logic/cubit/home_cubit.dart';
+import '../../logic/cubit/home_cubit.dart';
 
 class DoctorsSpecialityListViewWidget extends StatefulWidget {
   final List<SpecializationData?>? specializationList;

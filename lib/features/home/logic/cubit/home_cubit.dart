@@ -22,8 +22,8 @@ class HomeCubit extends Cubit<HomeState> {
         getDoctors(specializationList?.first?.id);
         emit(HomeState.specializationLoaded(specializationList));
       },
-      failure: (errorHandler) {
-        emit(HomeState.specializationError(errorHandler));
+      failure: (apiErrorModel) {
+        emit(HomeState.specializationError(apiErrorModel));
       },
     );
   }
@@ -35,9 +35,8 @@ class HomeCubit extends Cubit<HomeState> {
 
     if (!doctorsList.isNullOrEmpty()) {
       emit(HomeState.doctorsLoaded(doctorsList));
-      print("Doctors List is empty for specialization id: $doctorsList");
     } else {
-      emit(HomeState.doctorsError(ErrorHandler.handle("No doctors found")));
+      emit(HomeState.doctorsError(ApiErrorHandler.handle("No doctors found")));
     }
   }
 

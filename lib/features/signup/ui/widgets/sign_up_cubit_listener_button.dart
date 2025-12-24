@@ -18,9 +18,9 @@ class SignUpCubitListenerButton extends StatelessWidget {
     return BlocListener<SignUpCubit, SignUpState>(
       listener: (context, state) {
         state.whenOrNull(
-          error: (message) => showErrorDialog(context),
-          success: (data) => context.pushNamed(Routes.home),
-          loading: () => showDialog(
+          errorSignUp: (message) => showErrorDialog(context),
+          successSignUp: (data) => context.pushNamed(Routes.home),
+          loadingSignUp: () => showDialog(
             context: context,
             builder: (_) => Center(
               child: CircularProgressIndicator(

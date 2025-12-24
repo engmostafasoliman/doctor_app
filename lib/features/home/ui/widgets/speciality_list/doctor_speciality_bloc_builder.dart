@@ -2,7 +2,7 @@ import 'package:doctor/core/helpers/spacing.dart';
 import 'package:doctor/features/home/logic/cubit/home_cubit.dart';
 import 'package:doctor/features/home/logic/cubit/home_state.dart';
 import 'package:doctor/features/home/ui/widgets/doctors_list/doctors_shimmer_loading.dart';
-import 'package:doctor/features/home/ui/widgets/speciality_list/doctors_speciality_list_view_widget.dart';
+import 'package:doctor/features/home/ui/widgets/doctors_speciality_list_view_widget.dart';
 import 'package:doctor/features/home/ui/widgets/speciality_list/speciality_shimmer_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,8 +28,8 @@ class DoctorSpecialityBlocBuilder extends StatelessWidget {
               specializationList: specializationList,
             );
           },
-          specializationError: (errorHandler) {
-            return Center(child: Text('Error: $errorHandler'));
+          specializationError: (apiErrorModel) {
+            return Center(child: Text('Error: $apiErrorModel'));
           },
           orElse: () {
             return const SizedBox();

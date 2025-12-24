@@ -17,12 +17,14 @@ class LoginCubitListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Error || current is Success,
+          current is Loadinglogin ||
+          current is Errorlogin ||
+          current is Successlogin,
       listener: (context, state) {
         state.whenOrNull(
-          error: (message) => showErrorDialog(context),
-          success: (data) => context.pushNamed(Routes.home),
-          loading: () => showDialog(
+          errorlogin: (message) => showErrorDialog(context),
+          successlogin: (data) => context.pushNamed(Routes.home),
+          loadinglogin: () => showDialog(
             context: context,
             builder: (_) => Center(
               child: CircularProgressIndicator(

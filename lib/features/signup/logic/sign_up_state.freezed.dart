@@ -55,14 +55,14 @@ extension SignUpStatePatterns on SignUpState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( SignUpInitial value)?  initial,TResult Function( SignUpLoading value)?  loading,TResult Function( SignUpSuccess value)?  success,TResult Function( SignUpError value)?  error,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( SignUpInitial value)?  initial,TResult Function( SignUpLoading value)?  loadingSignUp,TResult Function( SignUpSuccess value)?  successSignUp,TResult Function( SignUpError value)?  errorSignUp,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case SignUpInitial() when initial != null:
-return initial(_that);case SignUpLoading() when loading != null:
-return loading(_that);case SignUpSuccess() when success != null:
-return success(_that);case SignUpError() when error != null:
-return error(_that);case _:
+return initial(_that);case SignUpLoading() when loadingSignUp != null:
+return loadingSignUp(_that);case SignUpSuccess() when successSignUp != null:
+return successSignUp(_that);case SignUpError() when errorSignUp != null:
+return errorSignUp(_that);case _:
   return orElse();
 
 }
@@ -80,14 +80,14 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( SignUpInitial value)  initial,required TResult Function( SignUpLoading value)  loading,required TResult Function( SignUpSuccess value)  success,required TResult Function( SignUpError value)  error,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( SignUpInitial value)  initial,required TResult Function( SignUpLoading value)  loadingSignUp,required TResult Function( SignUpSuccess value)  successSignUp,required TResult Function( SignUpError value)  errorSignUp,}){
 final _that = this;
 switch (_that) {
 case SignUpInitial():
 return initial(_that);case SignUpLoading():
-return loading(_that);case SignUpSuccess():
-return success(_that);case SignUpError():
-return error(_that);case _:
+return loadingSignUp(_that);case SignUpSuccess():
+return successSignUp(_that);case SignUpError():
+return errorSignUp(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -104,14 +104,14 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( SignUpInitial value)?  initial,TResult? Function( SignUpLoading value)?  loading,TResult? Function( SignUpSuccess value)?  success,TResult? Function( SignUpError value)?  error,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( SignUpInitial value)?  initial,TResult? Function( SignUpLoading value)?  loadingSignUp,TResult? Function( SignUpSuccess value)?  successSignUp,TResult? Function( SignUpError value)?  errorSignUp,}){
 final _that = this;
 switch (_that) {
 case SignUpInitial() when initial != null:
-return initial(_that);case SignUpLoading() when loading != null:
-return loading(_that);case SignUpSuccess() when success != null:
-return success(_that);case SignUpError() when error != null:
-return error(_that);case _:
+return initial(_that);case SignUpLoading() when loadingSignUp != null:
+return loadingSignUp(_that);case SignUpSuccess() when successSignUp != null:
+return successSignUp(_that);case SignUpError() when errorSignUp != null:
+return errorSignUp(_that);case _:
   return null;
 
 }
@@ -128,13 +128,13 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( SignUpResponse response)?  success,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loadingSignUp,TResult Function( SignUpResponse response)?  successSignUp,TResult Function( ApiErrorModel apiErrorModel)?  errorSignUp,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case SignUpInitial() when initial != null:
-return initial();case SignUpLoading() when loading != null:
-return loading();case SignUpSuccess() when success != null:
-return success(_that.response);case SignUpError() when error != null:
-return error(_that.message);case _:
+return initial();case SignUpLoading() when loadingSignUp != null:
+return loadingSignUp();case SignUpSuccess() when successSignUp != null:
+return successSignUp(_that.response);case SignUpError() when errorSignUp != null:
+return errorSignUp(_that.apiErrorModel);case _:
   return orElse();
 
 }
@@ -152,13 +152,13 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( SignUpResponse response)  success,required TResult Function( String message)  error,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loadingSignUp,required TResult Function( SignUpResponse response)  successSignUp,required TResult Function( ApiErrorModel apiErrorModel)  errorSignUp,}) {final _that = this;
 switch (_that) {
 case SignUpInitial():
 return initial();case SignUpLoading():
-return loading();case SignUpSuccess():
-return success(_that.response);case SignUpError():
-return error(_that.message);case _:
+return loadingSignUp();case SignUpSuccess():
+return successSignUp(_that.response);case SignUpError():
+return errorSignUp(_that.apiErrorModel);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -175,13 +175,13 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( SignUpResponse response)?  success,TResult? Function( String message)?  error,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loadingSignUp,TResult? Function( SignUpResponse response)?  successSignUp,TResult? Function( ApiErrorModel apiErrorModel)?  errorSignUp,}) {final _that = this;
 switch (_that) {
 case SignUpInitial() when initial != null:
-return initial();case SignUpLoading() when loading != null:
-return loading();case SignUpSuccess() when success != null:
-return success(_that.response);case SignUpError() when error != null:
-return error(_that.message);case _:
+return initial();case SignUpLoading() when loadingSignUp != null:
+return loadingSignUp();case SignUpSuccess() when successSignUp != null:
+return successSignUp(_that.response);case SignUpError() when errorSignUp != null:
+return errorSignUp(_that.apiErrorModel);case _:
   return null;
 
 }
@@ -244,7 +244,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'SignUpState.loading()';
+  return 'SignUpState.loadingSignUp()';
 }
 
 
@@ -281,7 +281,7 @@ int get hashCode => Object.hash(runtimeType,response);
 
 @override
 String toString() {
-  return 'SignUpState.success(response: $response)';
+  return 'SignUpState.successSignUp(response: $response)';
 }
 
 
@@ -323,10 +323,10 @@ as SignUpResponse,
 
 
 class SignUpError implements SignUpState {
-  const SignUpError(this.message);
+  const SignUpError(this.apiErrorModel);
   
 
- final  String message;
+ final  ApiErrorModel apiErrorModel;
 
 /// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
@@ -338,16 +338,16 @@ $SignUpErrorCopyWith<SignUpError> get copyWith => _$SignUpErrorCopyWithImpl<Sign
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignUpError&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignUpError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message);
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
 
 @override
 String toString() {
-  return 'SignUpState.error(message: $message)';
+  return 'SignUpState.errorSignUp(apiErrorModel: $apiErrorModel)';
 }
 
 
@@ -358,7 +358,7 @@ abstract mixin class $SignUpErrorCopyWith<$Res> implements $SignUpStateCopyWith<
   factory $SignUpErrorCopyWith(SignUpError value, $Res Function(SignUpError) _then) = _$SignUpErrorCopyWithImpl;
 @useResult
 $Res call({
- String message
+ ApiErrorModel apiErrorModel
 });
 
 
@@ -375,10 +375,10 @@ class _$SignUpErrorCopyWithImpl<$Res>
 
 /// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
   return _then(SignUpError(
-null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
-as String,
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
   ));
 }
 

@@ -20,7 +20,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit({required this.signUpRepo}) : super(SignUpState.initial());
 
   Future<void> signup() async {
-    emit(SignUpState.loading());
+    emit(SignUpState.loadingSignUp());
     final result = await signUpRepo.signup(
       SignUpRequestBody(
         name: nameController.text,
@@ -32,8 +32,8 @@ class SignUpCubit extends Cubit<SignUpState> {
       ),
     );
     result.when(
-      success: (data) => emit(SignUpState.success(data)),
-      failure: (error) => emit(SignUpState.error(error.apiErrorModel.message)),
+      success: (data) => emit(SignUpState.successSignUp(data)),
+      failure: (apiErrorModel) => emit(SignUpState.errorSignUp(apiErrorModel)),
     );
   }
 }
